@@ -1,5 +1,6 @@
 package hayaa.database.center.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,10 +9,20 @@ import java.util.Date;
  *
  * @version 1.0 17-9-28 下午4:08 by谢青靖（xieqj@cloud-young.com）创建
  */
-public class DataConnectionString {
+public class DataConnectionString implements Serializable {
     private Integer id;
     private String Title;
     private String connection;
+
+    public String getDatabaseType() {
+        return databaseType;
+    }
+
+    public void setDatabaseType(String databaseType) {
+        this.databaseType = databaseType;
+    }
+
+    private String databaseType;
 
     public Integer getId() {
         return id;

@@ -1,5 +1,6 @@
 package hayaa.database.center.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Date;
  *
  * @version 1.0 17-9-28 下午1:57 by谢青靖（xieqj@cloud-young.com）创建
  */
-public class Column {
+public class Column implements Serializable {
     private Integer columnId;
     private String columnName;
 
@@ -55,9 +56,4 @@ public class Column {
     private String columnTitle;
     private String dataType;
     private java.util.Date createTime;
-
-
-    public Column() {
-    }
-
 }

@@ -1,5 +1,6 @@
 package hayaa.database.center.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Date;
  *
  * @version 1.0 17-9-28 下午2:11 by谢青靖（xieqj@cloud-young.com）创建
  */
-public class Table {
+public class Table implements Serializable {
     private Integer tableId;
     private String tableName;
 
