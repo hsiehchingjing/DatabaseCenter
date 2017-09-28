@@ -13,4 +13,10 @@
         <module>CenterService</module>
         <module>CenterServiceCore</module>
     </modules>
+    <distributionManagement>
+        <repository>
+            <id>hayaalib</id>
+            <url>http://lib.xieqj.net:10001/nexus/content/repositories/hayaalib/</url>
+        </repository>
+    </distributionManagement>
 </project>
