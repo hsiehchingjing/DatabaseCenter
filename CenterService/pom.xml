@@ -11,6 +11,7 @@
 
     <artifactId>CenterService</artifactId>
     <packaging>jar</packaging>
+
     <distributionManagement>
         <repository>
             <id>hayaalib</id>
