@@ -2,6 +2,7 @@ package hayaa.database.center.serviceImpl;
 
 import hayaa.database.center.model.*;
 import hayaa.database.center.service.DataService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  *
  * @version 1.0 17-9-28 下午6:20 by谢青靖（xieqj@cloud-young.com）创建
  */
+
 public class DataServer implements DataService {
     /**
      * @param id@描述：根据主键获取连接字符串

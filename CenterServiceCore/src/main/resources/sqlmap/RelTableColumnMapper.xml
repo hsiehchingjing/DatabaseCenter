@@ -5,8 +5,8 @@ PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybat
 
 <!-- 不使用namespace的话sql搜索定位会比较方便 -->
 
-<mapper namespace="com.cloudyoung.ec.product.dao.RelTableColumnMapper">
-	<resultMap id="BaseResultMap" type="com.cloudyoung.ec.product.model.RelTableColumn">
+<mapper namespace="hayaa.database.center.dao.RelTableColumnMapper">
+	<resultMap id="BaseResultMap" type="hayaa.database.center.model.RelTableColumn">
 			<result property="id" column="id"/>
 			<result property="current" column="current"/>
 			<result property="createTime" column="createTime"/>

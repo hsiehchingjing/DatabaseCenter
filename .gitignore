@@ -1,4 +1,13 @@
 # Created by .ignore support plugin (hsz.mobi)
+target/
+bin/
+.classpath
+.project
+.settings
+.idea
+*.iml
+.DS_store
+release.properties
 ### Java template
 # Compiled class file
 *.class

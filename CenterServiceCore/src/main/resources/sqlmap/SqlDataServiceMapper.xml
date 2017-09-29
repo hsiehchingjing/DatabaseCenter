@@ -5,8 +5,8 @@ PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybat
 
 <!-- 不使用namespace的话sql搜索定位会比较方便 -->
 
-<mapper namespace="com.cloudyoung.ec.product.dao.SqlDataServiceMapper">
-	<resultMap id="BaseResultMap" type="com.cloudyoung.ec.product.model.SqlDataService">
+<mapper namespace="hayaa.database.center.dao.SqlDataServiceMapper">
+	<resultMap id="BaseResultMap" type="hayaa.database.center.model.SqlDataService">
 			<result property="dataServiceId" column="DataServiceID"/>
 			<result property="dataServiceTitle" column="DataServiceTitle"/>
 			<result property="dataScript" column="DataScript"/>

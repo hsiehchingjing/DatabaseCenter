@@ -11,10 +11,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="CenterService" target="1.5" />
-      <module name="CenterServiceCore" target="1.5" />
-      <module name="DatabaseCenter" target="1.5" />
-      <module name="DataBaseCore" target="1.5" />
+      <module name="CenterService" target="1.8" />
+      <module name="CenterServiceCore" target="1.8" />
+      <module name="DatabaseCenter" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

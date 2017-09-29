@@ -6,7 +6,7 @@ PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybat
 <!-- 不使用namespace的话sql搜索定位会比较方便 -->
 
 <mapper namespace="hayaa.database.center.dao.ColumnMapper">
-	<resultMap id="BaseResultMap" type="com.cloudyoung.ec.product.model.Column">
+	<resultMap id="BaseResultMap" type="hayaa.database.center.model.Column">
 			<result property="columnId" column="columnId"/>
 			<result property="columnname" column="columnname"/>
 			<result property="columntitle" column="columntitle"/>
