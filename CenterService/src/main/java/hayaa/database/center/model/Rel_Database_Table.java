@@ -1,5 +1,6 @@
 package hayaa.database.center.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Date;
  *
  * @version 1.0 17-9-28 下午4:01 by谢青靖（xieqj@cloud-young.com）创建
  */
-public class Rel_Database_Table {
+public class Rel_Database_Table implements Serializable {
     private Integer id;
 
     public Integer getId() {
@@ -64,4 +65,9 @@ public class Rel_Database_Table {
     private Boolean curren;
     private java.util.Date updateTime;
     private java.util.Date createTime;
+    public Rel_Database_Table(Integer databaseId,Integer tableId){
+        this.databaseId=databaseId;
+        this.tableId=tableId;
+        this.curren=true;
+    }
 }

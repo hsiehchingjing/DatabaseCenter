@@ -53,5 +53,20 @@ public class Result<T> {
     private String msg;
     private String error;
     private String code;
+    public Result(T result) {
+        this.data = result;
+        this.methodResult = true;
+    }
+    public Result(String errCode, String errMsg) {
+        this.error = errMsg;
+        this.code = errCode;
+        this.methodResult = false;
+    }
 
+    public Result(T result, String errCode, String errMsg) {
+        this.data = result;
+        this.error = errMsg;
+        this.code = errCode;
+        this.methodResult = false;
+    }
 }

@@ -380,6 +380,25 @@ PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybat
     </if>
       limit ${startRow},${pageSize} 
   </select>
+    <select id="searchDataConnectionString" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from dataconnectionstring
+        <where>
+            <if test="connection != null and connection != ''">
+                AND connection LIKE concat('%',#{connection},'%')
+            </if>
+            <if test="databaseType != null and databaseType != ''">
+                AND databaseType LIKE concat('%',#{databaseType},'%')
+            </if>
+            <if test="title != null and title != ''">
+                AND title LIKE concat('%',#{title},'%')
+            </if>
+            <if test="null!=isActive and isActive>=0">
+                AND is_active =#{isActive}
+            </if>
+        </where>
 
+    </select>
 </mapper>
 

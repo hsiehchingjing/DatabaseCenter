@@ -345,5 +345,16 @@ PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybat
       limit ${startRow},${pageSize} 
   </select>
 
+    <insert id="insertBatch" useGeneratedKeys="true" parameterType="java.util.List">
+        <selectKey resultType="long" keyProperty="id" order="AFTER">
+            SELECT
+            LAST_INSERT_ID()
+        </selectKey>
+        insert into column (columnname,columntitle,datatype,createTime)
+        values
+        <foreach collection="list" item="item" index="index" separator="," >
+            (#{item.columnname},#{item.columntitle},#{item.datatype},#{item.createTime})
+        </foreach>
+    </insert>
 </mapper>
 

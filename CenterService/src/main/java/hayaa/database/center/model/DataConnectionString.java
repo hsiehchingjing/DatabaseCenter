@@ -84,4 +84,10 @@ public class DataConnectionString implements Serializable {
     private java.util.Date creatTime;
     private Date updateTime;
     private Boolean isActive;
+
+    public DataConnectionString(String title, String connectionString, String dataType) {
+        this.Title = title;
+        this.connection = connectionString;
+        this.databaseType = dataType;
+    }
 }
