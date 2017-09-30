@@ -4,6 +4,8 @@ import hayaa.database.center.model.Table;
 import hayaa.database.center.model.TableExample;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * 说明：
  * 版权所有。
@@ -12,4 +14,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface TableMapper  extends BaseMapper<Table,TableExample>{
+    List<Table> searchTable(String tableName, String tableRemark, String tableTitle, int isActive);
 }

@@ -4,6 +4,8 @@ import hayaa.database.center.model.Database;
 import hayaa.database.center.model.DatabaseExample;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * 说明：
  * 版权所有。
@@ -12,4 +14,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface DatabaseMapper extends BaseMapper<Database,DatabaseExample> {
+    List<Database> searchDatabase(String name, String databaseType, Boolean status, int isActive);
 }

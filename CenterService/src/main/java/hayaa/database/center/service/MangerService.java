@@ -35,7 +35,7 @@ public interface MangerService {
      * @param
      * @返回
      */
-    Result<Boolean> updateDataConnectionString(String title);
+    Result<Boolean> updateDataConnectionStringById(String title,Integer id);
     /**
      * @描述：更新字符串关联的数据库id
      * @version 1.0 17-9-28 17-9-28 由谢青靖（xieqj@cloud-young.com）创建

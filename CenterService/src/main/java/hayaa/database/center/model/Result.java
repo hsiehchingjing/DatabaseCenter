@@ -8,6 +8,7 @@ package hayaa.database.center.model;
  */
 public class Result<T> {
     private T data;
+    //是否到到方法执行目标，达到为true，达不到为false
     private Boolean methodResult;
 
     public T getData() {
@@ -56,6 +57,7 @@ public class Result<T> {
     public Result(T result) {
         this.data = result;
         this.methodResult = true;
+        if(this.data==null) this.methodResult=false;
     }
     public Result(String errCode, String errMsg) {
         this.error = errMsg;

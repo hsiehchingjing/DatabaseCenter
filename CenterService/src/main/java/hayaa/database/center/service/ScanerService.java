@@ -15,12 +15,12 @@ public interface ScanerService {
      * @param
      * @返回
      */
-    Result<Boolean> ScanDatabaseByConnection(Integer conectionId);
+    Result<Boolean> ScanDatabaseByConnection(Integer conectionId,Integer databaseId);
     /**
      * @描述：依据数据库id扫描数据库
      * @version 1.0 17-9-28 17-9-28 由谢青靖（xieqj@cloud-young.com）创建
      * @param
      * @返回
      */
-    Result<Boolean> ScanDatabaseByDatabaseId(String databaseId);
+    Result<Boolean> ScanDatabaseByDatabaseId(Integer databaseId);
 }

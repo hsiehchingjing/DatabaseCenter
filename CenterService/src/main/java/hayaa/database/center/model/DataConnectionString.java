@@ -85,9 +85,32 @@ public class DataConnectionString implements Serializable {
     private Date updateTime;
     private Boolean isActive;
 
+    public String getDatabaseUser() {
+        return databaseUser;
+    }
+
+    public void setDatabaseUser(String databaseUser) {
+        this.databaseUser = databaseUser;
+    }
+
+    public String getDatabasePwd() {
+        return databasePwd;
+    }
+
+    public void setDatabasePwd(String databasePwd) {
+        this.databasePwd = databasePwd;
+    }
+
+    private String databaseUser;
+    private String databasePwd;
+
     public DataConnectionString(String title, String connectionString, String dataType) {
         this.Title = title;
         this.connection = connectionString;
         this.databaseType = dataType;
+    }
+
+    public DataConnectionString() {
+
     }
 }

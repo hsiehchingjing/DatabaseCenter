@@ -15,4 +15,6 @@ import java.util.List;
 @Repository
 public interface ColumnMapper extends BaseMapper<Column, ColumnExample> {
     Integer insertBatch(List<Column> list);
+
+    List<Column> searchColumn(String columnName, String columnTitle, String dataType, int isActive);
 }
