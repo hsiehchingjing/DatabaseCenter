@@ -6,6 +6,8 @@ import hayaa.database.center.model.Table;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCallback;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.RowMapperResultSetExtractor;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import java.sql.PreparedStatement;
@@ -22,6 +24,7 @@ import java.util.List;
  */
 public class MysqlDatabaseManager {
     private JdbcTemplate jdbcTemplate;
+
     public MysqlDatabaseManager(String url, String user, String pwd) {
         DriverManagerDataSource dataSource = new DriverManagerDataSource(url, user, pwd);
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
@@ -29,38 +32,34 @@ public class MysqlDatabaseManager {
     }
 
 
-
-    public Result<List<Column>> getTableColumn(String databaseName,String tableName) {
+    public Result<List<Column>> getTableColumn(String databaseName, String tableName) {
         String sql = "select column_name,data_type from information_schema.columns where " +
-                "table_schema='"+
+                "table_schema='" +
                 databaseName + "' and table_name='" + tableName + "';";
         List<Column> list = null;
-//        jdbcTemplate.query(sql,new PreparedStatementCallback() {
-//            public Object doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
-//
-//                ps.setInt(1, 20);
-//
-//                ResultSet rs=ps.executeQuery();
-//
-//                Column info = new Column();
-//
-//                List list=new ArrayList();
-//
-//                while (rs.next()) {
-//                    info.setColumnId(rs.getInt("id"));
-//
-//                    list.add(info);
-//                }
-//
-//                return list;
-//            }
-//        });
-
+        jdbcTemplate.query(sql, new RowMapperResultSetExtractor(new RowMapper() {
+            public Object mapRow(ResultSet rs, int index)
+                    throws SQLException {
+                Column temp=new Column();
+                temp.setColumnName(rs.getString("column_name"));
+                temp.setDataType(rs.getString("data_type"));
+                return temp;
+            }
+        }));
         return new Result<List<Column>>(list);
     }
 
     public Result<List<Table>> getTable(String databaseName) {
+        String sql = "select table_name from information_schema.tables where table_schema='"+ databaseName + "' and table_type='base table';";
         List<Table> list = null;
+        jdbcTemplate.query(sql, new RowMapperResultSetExtractor(new RowMapper() {
+            public Object mapRow(ResultSet rs, int index)
+                    throws SQLException {
+                Table temp=new Table();
+                temp.setTableName(rs.getString("table_name"));
+                return temp;
+            }
+        }));
         return new Result<List<Table>>(list);
     }
 }
